@@ -1,4 +1,4 @@
-import {Donor} from '../model/blood';
+import {Donor} from '../model/blood.js';
 const createDonor=(req,res)=>{
     const donor =new Donor(req.body);
     donor.save()

@@ -3,8 +3,12 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import {router} from './routes/blood';
+import {router} from './routes/blood.js';
+
+import { fileURLToPath } from 'url';
+import {dirname} from 'path';
 import path from 'path';
+
 const server=express();
 
 
@@ -15,13 +19,13 @@ async function main() {
   console.log("database Connected");
 }
 
-
+const __dirname = dirname(fileURLToPath(import.meta.url));
 server.use(express.json());
 server.use(cors());
 server.use(express.static(path.join(__dirname,'./build')));
 server.use("/blood",router);
 server.get('*',function(req,res){
-  res.sendFile(path,join(__dirname,'./build/index.html'));
+  res.sendFile(path.join(__dirname,'./build/index.html'));
 });
 
 
