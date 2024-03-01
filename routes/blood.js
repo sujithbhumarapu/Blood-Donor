@@ -1,5 +1,5 @@
 import express from 'express';
-import {createDonor,getDonors} from '../controller/blood.js';
+import {createDonor,getDonors} from '../controller/blood';
 const router= express.Router();
 
 router

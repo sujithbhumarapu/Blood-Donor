@@ -3,7 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import {router} from './routes/blood.js';
+import {router} from './routes/blood';
 import path from 'path';
 const server=express();
 
