@@ -21,8 +21,8 @@ server.use(cors());
 server.use(express.static(path.join(__dirname,'./build')));
 server.use("/blood",router);
 server.get('*',function(req,res){
-  res.sendFile()
-})
+  res.sendFile(path,join(__dirname,'./build/index.html'));
+});
 
 
 
