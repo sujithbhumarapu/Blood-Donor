@@ -4,8 +4,9 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import {router} from './routes/blood.js';
-
+import path from 'path';
 const server=express();
+
 
 main().catch(err => console.log(err));
 
@@ -17,9 +18,11 @@ async function main() {
 
 server.use(express.json());
 server.use(cors());
-server.use(express.static(process.env.PUBLIC_DIR));
+server.use(express.static(path.join(__dirname,'./build')));
 server.use("/blood",router);
-
+server.get('*',function(req,res){
+  res.sendFile()
+})
 
 
 

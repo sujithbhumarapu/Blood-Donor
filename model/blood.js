@@ -7,5 +7,5 @@ const DonorSchema = new Schema({
     mobile: {type:Number,required:true},
     email:{type:String,required:true,unique:true}
   });
-  const Donor = mongoose.model('Donor', DonorSchema);
+  const Donor = mongoose.('Donor', DonorSchema);
 export {Donor};
